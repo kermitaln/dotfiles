@@ -1,0 +1,11 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.zshrc:
+      force: true
+      path: zshrc
+    ~/.ssh/config:
+      create: true
+      path: ssh/config

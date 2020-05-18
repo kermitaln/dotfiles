@@ -1,0 +1,140 @@
+#################
+# Global Config #
+#################
+
+Host *
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+
+Host proxyvip
+  Hostname proxyvip.igrupobbva:1080
+
+###################
+# GDT DEV section #
+###################
+
+# IF CONNECTED THROUGH PROXY...
+#Host dev.globaldevtools.bbva.com
+#  ProxyCommand nc -x proxyvip %h %p
+
+Host 10.11.*
+  User ec2-user
+  IdentityFile ~/.ssh/globaldevops-dev.pem
+  #User e051273
+  #IdentityFile ~/.ssh/id_rsa
+  ProxyCommand ssh bastion-dev -W %h:%p
+
+Host bastion-dev
+  Hostname 52.208.47.110
+  User ec2-user
+  IdentityFile ~/.ssh/globaldevops-dev.pem
+  #User e051273
+  #IdentityFile ~/.ssh/id_rsa
+  # IF CONNECTED THROUGH PROXY...
+  #ProxyCommand nc -x proxyvip %h %p
+
+# Forwarding to access Nomad in DEV (local port 24646)
+# to get Nomad IP, check https://dev.globaldevtools.bbva.com/sensu/#/clients?q=nomad
+Host tunnel-nomad-dev # nomad.dev.globaldevtools.bbva.com
+ User ec2-user
+ IdentityFile ~/.ssh/globaldevops-dev.pem
+ ProxyCommand ssh bastion-dev -W 10.11.23.200:22
+ LocalForward 24646 localhost:4646
+
+Host tunnel-apis-ddbb-dev
+  User ec2-user
+  IdentityFile ~/.ssh/globaldevops-dev.pem
+  ProxyCommand ssh bastion-dev -W 10.11.23.200:22
+  LocalForward 23306 etherification-apis.cppz6brrn0he.eu-west-1.rds.amazonaws.com:3306
+  #ssh -L 3306:etherification-apis.cppz6brrn0he.eu-west-1.rds.amazonaws.com:3306 10.11.23.200
+
+
+###################
+# GDT PRO section #
+###################
+
+# IF CONNECTED THROUGH PROXY...
+#Host globaldevtools.bbva.com
+#  ProxyCommand nc -x proxyvip %h %p
+
+Host 10.10.*
+  User ec2-user
+  IdentityFile ~/.ssh/globaldevops.pem
+  #User e051273
+  #IdentityFile ~/.ssh/id_rsa
+  ProxyCommand ssh bastion-pro -W %h:%p
+
+Host bastion-pro
+  Hostname 52.210.244.18
+  User ec2-user
+  IdentityFile ~/.ssh/globaldevops.pem
+  #User e051273
+  #IdentityFile ~/.ssh/id_rsa
+  # IF CONNECTED THROUGH PROXY...
+  #ProxyCommand nc -x proxyvip %h %p 
+
+# Forwarding to access Nomad in PRO (local port 14646)
+# to get Nomad IP, check https://globaldevtools.bbva.com/sensu/#/clients?q=nomad
+Host tunnel-nomad-pro # nomad.globaldevtools.bbva.com
+ User ec2-user
+ IdentityFile ~/.ssh/globaldevops.pem
+ ProxyCommand ssh bastion-pro -W 10.10.21.142:22
+ LocalForward 14646 localhost:4646
+
+Host tunnel-crowd-pro
+  User ec2-user
+  IdentityFile ~/.ssh/globaldevops.pem
+  #ProxyCommand ssh bastion-pro nc 10.10.21.84 22
+  ProxyCommand ssh bastion-pro -W 10.10.21.84:22
+  LocalForward 8095 pro-globaldevops-crowd:8095
+
+Host tunnel-apis-ddbb-pro
+  User ec2-user
+  IdentityFile ~/.ssh/globaldevops.pem
+  ProxyCommand ssh bastion-pro -W 10.10.21.151:22
+  LocalForward 13306 etherification-rds.cc2ulsf6wl5e.eu-west-1.rds.amazonaws.com:3306
+
+##########
+# LCM R2 #
+##########
+
+# (l)inux
+# - (d)esarrollo
+# - (c)ertificación
+# - (i)ntegrado
+# - (p)roducción
+Host l???????
+  Hostname %h.igrupobbva
+  User e051273
+
+Host puppet-master
+  Hostname lpgst306.igrupobbva
+  User e051273
+
+Host puppet-master-previos
+  Hostname lpgst307.igrupobbva
+  User e051273
+
+Host bamboo
+  Hostname lplcm401.igrupobbva
+  User e051273
+
+Host newbamboo
+  Hostname lplcm406.igrupobbva
+  User e051273
+
+Host pozo
+  Hostname lpnes301.igrupobbva
+  User e051273
+
+###############
+# LCM Physics #
+###############
+
+Host sebasshtian
+  Hostname gh-vip.es.nextgen.igrupobbva
+  IdentityFile ~/.ssh/id_rsa_physics
+
+Host !scm.live.es.nextgen.igrupobbva *.es.nextgen.igrupobbva *.eu.cld.nextgen.igrupobbva
+  User e051273
+  ProxyCommand ssh %r@%h@sebasshtian -W %h:%p
