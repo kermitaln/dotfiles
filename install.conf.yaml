@@ -9,3 +9,6 @@
     ~/.ssh/config:
       create: true
       path: ssh/config
+    ~/.gitconfig:
+      force: true
+      path: gitconfig
