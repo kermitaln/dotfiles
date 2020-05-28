@@ -138,3 +138,8 @@ Host sebasshtian
 Host !scm.live.es.nextgen.igrupobbva *.es.nextgen.igrupobbva *.eu.cld.nextgen.igrupobbva
   User e051273
   ProxyCommand ssh %r@%h@sebasshtian -W %h:%p
+
+Host apx-deployer
+  Hostname cvs1dlj08.work.es.nextgen.igrupobbva
+  User e051273
+  ProxyCommand ssh %r@%h@sebasshtian -W %h:%p

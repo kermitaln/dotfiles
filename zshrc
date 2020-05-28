@@ -71,9 +71,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	git
         z
-        virtualenvwrapper
         fzf
         pip
+	pyenv
+	virtualenv
+	direnv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -104,8 +106,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# kermit: virtualenvwrapper thigs
-source /usr/bin/virtualenvwrapper.sh
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(pyenv virtualenv-init -)"
+
+# append
+path+=($HOME'/bin')
+export PATH
