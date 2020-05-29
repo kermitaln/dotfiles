@@ -12,3 +12,6 @@
     ~/.gitconfig:
       force: true
       path: gitconfig
+    ~/.vimrc:
+      force: true
+      path: vimrc
