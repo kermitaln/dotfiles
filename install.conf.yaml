@@ -9,6 +9,9 @@
     ~/.ssh/config:
       create: true
       path: ssh/config
+    ~/.ssh/bbva_config
+      force: true
+      path: bbva-dotfiles/ssh/config
     ~/.gitconfig:
       force: true
       path: gitconfig
