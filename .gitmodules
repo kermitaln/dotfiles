@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "bbva-dotfiles"]
+	path = bbva-dotfiles
+	url = ssh://git@globaldevtools.bbva.com:7999/~adrian.lizano/dotfiles.git
