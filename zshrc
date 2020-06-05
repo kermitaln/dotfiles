@@ -76,6 +76,7 @@ plugins=(
 	pyenv
 	virtualenv
 	direnv
+	tmux
 )
 
 source $ZSH/oh-my-zsh.sh
