@@ -18,3 +18,7 @@
     ~/.vimrc:
       force: true
       path: vimrc
+    ~/.config/terminator/config:
+      force: true
+      create: true
+      path: terminator/config
