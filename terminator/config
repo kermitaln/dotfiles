@@ -1,0 +1,27 @@
+[global_config]
+  window_state = maximise
+  title_transmit_bg_color = "#16a085"
+  always_split_with_profile = True
+[keybindings]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+  [[Manjaro]]
+    allow_bold = False
+    background_color = "#1e2229"
+    cursor_color = "#aaaaaa"
+    font = Noto Mono 10
+    foreground_color = "#17a88b"
+    scrollback_infinite = True
+    palette = "#1e2229:#ed1515:#44853a:#f67400:#3daee9:#9b59b6:#1abc9c:#fcfcfc:#7f8c8d:#c0392b:#55a649:#fdbc4b:#1d99f3:#8e44ad:#16a085:#ffffff"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = Manjaro
+[plugins]
