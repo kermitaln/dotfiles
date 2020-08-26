@@ -8,6 +8,7 @@
       path: zshrc
     ~/.ssh/config:
       create: true
+      force: true
       path: ssh/config
     ~/.ssh/bbva_config:
       force: true
