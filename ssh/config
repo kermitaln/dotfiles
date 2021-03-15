@@ -6,13 +6,9 @@ Host *
   ServerAliveInterval 30
   ServerAliveCountMax 3
 
-Host github.com
-  HostName github.com
-  User git
-  IdentityFile ~/etc/ssl/kermitaln/id_rsa
-
 #################
 #    Includes   #
-################# 
+#################
 
+Include ~/.ssh/personal_config
 Include ~/.ssh/bbva_config

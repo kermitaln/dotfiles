@@ -10,6 +10,9 @@
       create: true
       force: true
       path: ssh/config
+    ~/.ssh//personal_config:
+      force: true
+      path: ssh/personal_config
     ~/.ssh/bbva_config:
       force: true
       path: bbva-dotfiles/ssh/config
