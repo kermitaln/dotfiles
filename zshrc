@@ -114,4 +114,5 @@ eval "$(pyenv virtualenv-init -)"
 
 # append
 path+=($HOME'/bin')
+path+=($HOME'/go/bin')
 export PATH
