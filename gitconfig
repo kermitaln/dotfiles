@@ -2,3 +2,6 @@
 	editor = vim
 [pull]
 	rebase = false
+
+[url "ssh://git@globaldevtools.bbva.com:7999/"]
+	insteadOf = https://globaldevtools.bbva.com/bitbucket/scm/
