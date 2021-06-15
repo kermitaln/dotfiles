@@ -3,6 +3,9 @@
       relink: true
 
 - link:
+    ~/.zprofile:
+      force: true
+      patch: zprofile
     ~/.zshrc:
       force: true
       path: zshrc
