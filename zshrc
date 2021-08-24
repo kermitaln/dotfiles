@@ -77,6 +77,7 @@ plugins=(
 	virtualenv
 	direnv
 	tmux
+	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
