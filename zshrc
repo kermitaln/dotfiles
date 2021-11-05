@@ -114,6 +114,8 @@ export LANG=en_US.UTF-8
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+source /usr/share/nvm/init-nvm.sh
+
 # append
 path+=($HOME'/bin')
 path+=($HOME'/go/bin')
