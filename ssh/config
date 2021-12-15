@@ -12,3 +12,4 @@ Host *
 
 Include ~/.ssh/personal_config
 Include ~/.ssh/bbva_config
+Include ~/.ssh/dynamic_config
