@@ -21,7 +21,7 @@
       path: bbva-dotfiles/ssh/config
     ~/.ssh/dynamic_config:
       if: '[ ! -f ~/.ssh/dynamic_config ]'
-      path: ssh/dynamic_config
+      path: ssh/dynamic_config.tmpl
     ~/.gitconfig:
       force: true
       path: gitconfig
