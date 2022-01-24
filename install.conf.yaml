@@ -19,9 +19,6 @@
     ~/.ssh/bbva_config:
       force: true
       path: bbva-dotfiles/ssh/config
-    ~/.ssh/dynamic_config:
-      if: '[ ! -f ~/.ssh/dynamic_config ]'
-      path: ssh/dynamic_config.tmpl
     ~/.gitconfig:
       force: true
       path: gitconfig
@@ -32,3 +29,6 @@
       force: true
       create: true
       path: terminator/config
+
+- shell:
+    - [ 'if [ ! -f ~/.ssh/dynamic_config ]; then touch ~/.ssh/dynamic_config; fi', Create dynamic ssh config file if needed ]
