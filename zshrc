@@ -120,3 +120,7 @@ source /usr/share/nvm/init-nvm.sh
 path+=($HOME'/bin')
 path+=($HOME'/go/bin')
 export PATH
+
+# CNTLM proxy
+export HTTP_PROXY=http://localhost:3128
+export HTTPS_PROXY=http://localhost:3128
