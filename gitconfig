@@ -5,3 +5,7 @@
 
 [url "ssh://git@globaldevtools.bbva.com:7999/"]
 	insteadOf = https://globaldevtools.bbva.com/bitbucket/scm/
+[merge]
+    tool = meld
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
